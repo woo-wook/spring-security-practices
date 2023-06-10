@@ -47,4 +47,7 @@
 > 스프링이 구현한 자동 구현은 가본 자격 증명을 등록하는 일만 수행한다. 패스워드 인코더는 암호를 인코딩하여 기존과 일치하는지 확인하는 역할을 수행한다. 반드시 인증 흐름에 필요하다.
 > **AuthenticationProvider**는 인증 논리를 정의하고 사용자와 암호의 관리를 위임한다. 이때 구현은 위에서 정의한 사용자 세부 서비스와 패스워드 인코더를 사용한다.
 
- 
+### [기본 구성 재정의 - UserDetailsService, PasswordEncoder](first-project/src/main/kotlin/me/hanwook/security/firstproject/config/SecurityConfig.kt)
+
+> 애플리케이션은 이 구성 요소를 인증 프로세스에 사용한다. 이 단원에서는 스프링 시큐리티에 있는 InMemoryUserDetailsManager를 구현하고 PasswordEncoder에 대해 알아보자.
+> UserDetailsService를 재구성하면 반드시 PasswordEncoder 또한 다시 구성해주어야 한다.
