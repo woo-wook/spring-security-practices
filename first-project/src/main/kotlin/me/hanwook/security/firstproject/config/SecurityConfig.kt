@@ -12,7 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager
 class SecurityConfig {
 
     @Bean
-    fun userDetailsService() : UserDetailsService {
+    fun userDetailsService(): UserDetailsService {
         val inMemoryUserDetailsManager = InMemoryUserDetailsManager()
 
         val user = User.withUsername("user")
@@ -26,5 +26,5 @@ class SecurityConfig {
     }
 
     @Bean
-    fun passwordEncoder() : PasswordEncoder = NoOpPasswordEncoder.getInstance()
+    fun passwordEncoder(): PasswordEncoder = NoOpPasswordEncoder.getInstance()
 }
