@@ -51,3 +51,9 @@
 
 > 애플리케이션은 이 구성 요소를 인증 프로세스에 사용한다. 이 단원에서는 스프링 시큐리티에 있는 InMemoryUserDetailsManager를 구현하고 PasswordEncoder에 대해 알아보자.
 > UserDetailsService를 재구성하면 반드시 PasswordEncoder 또한 다시 구성해주어야 한다.
+ 
+### [엔드포인트 권한 부여 구성 재정의](first-project/src/main/kotlin/me/hanwook/security/firstproject/config/CustomSecurityFilterChainConfig.kt)
+
+> 기본 구성에서 모든 엔드포인트는 애플리케이션에서 관리하는 유용한 사용자가 있다고 가정한다. 기본적으로 HTTP Basic 인증을 권한 부여 방식으로 사용하지만, 쉽게 재 정의 할 수 있다.
+> 애플리케이션의 모든 엔드포인트를 보호할 필요는 없으며, 보안이 필요한 엔드포인트에 다른 권한 부여 규칙을 선택해야 할 수도 있다.  
+> (**WebSecurityConfigurerAdapter**를 확장할 수 있지만, 제거되었다. 따라서 **SecurityFilterChain**을 이용하자.)
