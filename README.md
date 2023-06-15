@@ -57,3 +57,7 @@
 > 기본 구성에서 모든 엔드포인트는 애플리케이션에서 관리하는 유용한 사용자가 있다고 가정한다. 기본적으로 HTTP Basic 인증을 권한 부여 방식으로 사용하지만, 쉽게 재 정의 할 수 있다.
 > 애플리케이션의 모든 엔드포인트를 보호할 필요는 없으며, 보안이 필요한 엔드포인트에 다른 권한 부여 규칙을 선택해야 할 수도 있다.  
 > (**WebSecurityConfigurerAdapter**를 확장할 수 있지만, 제거되었다. 따라서 **SecurityFilterChain**을 이용하자.)
+
+### [다른 방법으로 구성 설정](first-project/src/main/kotlin/me/hanwook/security/firstproject/config/OtherSecurityConfig.kt)
+
+> 여러 가지 방법으로 같은 구성을 만들 수 있다. 다른 방법도 숙지하고 있어야 한다. **AuthenticationManger**를 통해 **UserDetailsService**와 **PasswordEncoder**를 설정해보자.
