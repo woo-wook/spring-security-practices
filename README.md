@@ -61,3 +61,11 @@
 ### [다른 방법으로 구성 설정](first-project/src/main/kotlin/me/hanwook/security/firstproject/config/OtherSecurityConfig.kt)
 
 > 여러 가지 방법으로 같은 구성을 만들 수 있다. 다른 방법도 숙지하고 있어야 한다. **AuthenticationManger**를 통해 **UserDetailsService**와 **PasswordEncoder**를 설정해보자.
+
+### [AuthenticationProvider 구현 재정의](first-project/src/main/kotlin/me/hanwook/security/firstproject/config/CustomAuthenticationProvider.kt)
+
+> **UserDetailsService**와 **PasswordEncoder**를 다시 구성 한 것 처럼 **AuthenticationProvider** 또한 재구성 할 수 있다. 
+> **AuthenticationProvider**는 인증에 대한 논리를 구현하고 사용자 관리와 암호 관리를 각 객체에 위임한다.
+
+
+
