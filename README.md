@@ -80,3 +80,26 @@
 
 > 스프링 시큐리티가 사용자를 이해할 수 있도록 사용자를 실제로 기술하는 방법에 대해 알아보자. 애플리케이션은 사용자가 누구인지에 따라서 특정 기능을 호출할 수 있는지 여부를 결정한다.
 > 스프링 시큐리티에서 사용하는 사용자는 **UserDetails** 계약을 준수해야 한다.
+
+### UserDetails 계약의 정의 이해하기
+
+> 사용자를 기술하기 위해 UserDetails를 구현해야 한다. 계약에 선언된 메서드를 알아보고 각 메서드를 구현하는 방법과 이유를 알아보자.
+
+UserDetails.java
+
+``` java
+public interface UserDetails extends Serializable {
+	Collection<? extends GrantedAuthority> getAuthorities();
+	String getPassword();
+	String getUsername();
+	boolean isAccountNonExpired();
+	boolean isAccountNonLocked();
+	boolean isCredentialsNonExpired();
+	boolean isEnabled();
+}
+```
+> getUsername()과 getPassword()는 사용자 이름과 암호를 반환하고, 
+> 반환된 사용자 이름과 암호는 앱에서 인증 과정에 사용 된다. 이 계약에서 이늦오가 관련된 유일한 세부 정보다. 
+> 나머지 다섯 메서드는 모두 사용자가 애플리케이션 리소스에 접근할 수 있도록 권한을 부여하기 위한 것 이다.
+> 또한, 일반적으로 앱은 애플리케이션에서 사용자가 의미 있는 작업을 수행하도록 허용해야 한다. 이를 위해 권리를 나타내는 것을 권한이라고 부른다.
+> getAuthorities() 메서드는 사용자의 권한 그룹을 반환한다.
